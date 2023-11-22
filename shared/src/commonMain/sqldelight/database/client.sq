@@ -1,0 +1,19 @@
+CREATE TABLE clientEntity(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    clientId TEXT NOT NULL,
+    token TEXT NOT NULL
+);
+
+getClient:
+SELECT * FROM clientEntity;
+
+insertClientToDb:
+INSERT OR REPLACE
+INTO clientEntity(
+    id,
+    clientId,
+    token
+) VALUES (?, ?, ?);
+
+deleteClientFromDb:
+DELETE FROM clientEntity;
