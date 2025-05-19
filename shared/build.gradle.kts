@@ -1,17 +1,17 @@
-val coroutinesVersion = "1.6.4"
-val ktorVersion = "2.2.4"
+val coroutinesVersion = "1.8.0"
+val ktorVersion = "2.3.9"
 val sqlDelightVersion = "1.5.5"
-val dateTimeVersion = "0.4.0"
+val dateTimeVersion = "0.5.0"
 
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    kotlin("plugin.serialization") version "1.8.20"
+    kotlin("plugin.serialization") version "2.0.21"
     id("com.squareup.sqldelight")
 }
 
 kotlin {
-    android()
+    androidTarget()
     
     listOf(
         iosX64(),
@@ -44,22 +44,22 @@ kotlin {
             dependencies {
                 implementation("io.ktor:ktor-client-android:$ktorVersion")
                 implementation("com.squareup.sqldelight:android-driver:$sqlDelightVersion")
-                implementation(platform("com.google.firebase:firebase-bom:32.0.0"))
+                implementation(platform("com.google.firebase:firebase-bom:33.8.0"))
                 implementation("com.google.firebase:firebase-auth-ktx")
                 implementation("com.google.firebase:firebase-appcheck-playintegrity")
                 implementation("com.google.firebase:firebase-appcheck-ktx")
 
                 //Play Integrity API
-                implementation("com.google.android.play:integrity:1.1.0")
+                implementation("com.google.android.play:integrity:1.4.0")
 
                 //SafetyNet
-                implementation("com.google.android.gms:play-services-safetynet:18.0.1")
+                implementation("com.google.android.gms:play-services-safetynet:18.1.0")
 
                 //Browser
                 //implementation("androidx.browser:browser:1.5.0")
             }
         }
-        val androidTest by getting
+        val androidUnitTest by getting
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
@@ -94,9 +94,9 @@ sqldelight {
 
 android {
     namespace = "com.maduo.redcarpet"
-    compileSdk = 33
+    compileSdk = 35
     defaultConfig {
-        minSdk = 21
-        targetSdk = 33
+        minSdk = 23
+        targetSdk = 35
     }
 }

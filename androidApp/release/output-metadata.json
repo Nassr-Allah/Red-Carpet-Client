@@ -16,5 +16,22 @@
       "outputFile": "androidApp-release.apk"
     }
   ],
-  "elementType": "File"
+  "elementType": "File",
+  "baselineProfiles": [
+    {
+      "minApi": 28,
+      "maxApi": 30,
+      "baselineProfiles": [
+        "baselineProfiles/1/androidApp-release.dm"
+      ]
+    },
+    {
+      "minApi": 31,
+      "maxApi": 2147483647,
+      "baselineProfiles": [
+        "baselineProfiles/0/androidApp-release.dm"
+      ]
+    }
+  ],
+  "minSdkVersionForDexing": 23
 }

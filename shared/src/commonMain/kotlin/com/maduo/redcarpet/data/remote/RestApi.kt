@@ -18,7 +18,7 @@ import kotlinx.serialization.json.Json
 class RestApi {
 
     companion object {
-        private const val BASE_URL = "http://89.116.236.180"
+        private const val BASE_URL = "http://147.93.52.105:8085"
         //private const val BASE_URL = "http://10.0.2.2:8080"
     }
 
